@@ -1,0 +1,125 @@
+<html>
+<head>
+
+<title>SelfMnagementSystem</title>
+</head>
+<body>
+<form method="" action="" id="appdashboard">
+<table border="6" align="center" width="500" bgcolor="#DEB887" >
+<caption background-color: red;><b style="font-size:35px">APPLICATION DASHBOARD</b></caption>
+
+<tr>
+<th><label id="appname" text="" style="font-size:20px">Application Name </th>
+<th><label id="checkforvalue" text="" style="font-size:20px">Enable Self-Management System?</th>
+<th><label id="selectInterval" text="" style="font-size:20px">Select duration to pull log</th> 
+<td><label id="enablecheck" style="font-size:30px"></td>
+</tr>
+
+
+<tr>
+<th><a href id="core" style="font-size:20px" onclick="textcontrolcore();">CORE </a>
+<input id="coretextarea" type="textarea" text="abc"  style="display:none; border:1px solid #666666; height:100px; width:200px; margin:16px 0 0 8px "></input>
+</th>
+<td align="center"><input type="checkbox" name="fn" id="fn1" maxlength="" title="" placeholder="" /></td>
+
+<td> <input type="text" onchange="logpull('usr_time1');" id= "usr_time1" name="usr_time1" style="width:50px;" > 
+ 
+<select id="selection1" name="selection">
+  <option value="hour">Hour</option>
+  <option value="minute">Minute</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<th><a href id="thub" style="font-size:20px" onclick="textcontrolthub();"> t-HUB </a>
+<input id="thubtextarea" type="textarea" text="" style="display:none; border:1px solid #666666; height:70px; width:200px; margin:16px 0 0 8px "></input>
+</th>
+<td align="center"><input type="checkbox" id= "fn2"/></td>
+<td> 
+<input type="text" id="usr_time2" name="usr_time2" onchange="logpull('usr_time2');" style="width:50px;" > 
+ 
+<select id="selection2" name="selection">
+  <option value="hour">Hour</option>
+  <option value="minute">Minute</option>
+</select>
+ </td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"><input type="submit" value="Save Configurations" style="font-size:15px"/>
+</td>
+</tr>
+
+</table>
+
+<br><br>
+
+<table id= "showresult" border="6" align="center" width="500">
+<caption background-color: red;><b style="font-size:35px " >Incident Details</b></caption>
+  <tr>
+    <th>Application Name</th>
+    <th>Incident No.</th> 
+	<th>Date/Time</th> 
+    <th>Issue Description</th>
+	<th>User ID</th>
+	<th>Action Taken</th>
+  </tr>
+  <tr>
+    <td>CORE</td>
+    <td>001</td> 
+    <td>2018-05-02 16:01:45</td>
+	<td>mod_jk child workerEnv in error state 6</td>
+    <td>axn1234</td> 
+    <td>Restarted the server</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+	<td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+</table>
+</form>
+
+<script type ="text/javascript">
+
+function textcontrolthub()
+{
+var my_disply = document.getElementById('thubtextarea').style.display;
+        if(my_disply == "block")
+              document.getElementById('thubtextarea').style.display = "none";
+        else
+              document.getElementById('thubtextarea').style.display = "block";
+}
+
+function textcontrolcore()
+{
+var my_disply = document.getElementById('coretextarea').style.display;
+        if(my_disply == "block")
+              document.getElementById('coretextarea').style.display = "none";
+        else
+              document.getElementById('coretextarea').style.display = "block";
+}
+
+function logpull(elementID)
+{
+		var alphaExp = /^[a-zA-Z]+$/;
+if (document.getElementById(elementID).value <= 0 || document.getElementById(elementID).value.match(alphaExp))
+{
+alert("Please enter numeric value greater than zero!")
+document.getElementById(elementID).value= "";
+}
+
+if (document.getElementById(elementID).value > 0)
+{
+
+}
+}
+
+
+</script>
+</body>
+</html>

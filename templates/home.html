@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PAC2000-Automation-Through-Machine-Learning</title>
+	<style>
+table {
+  border: 1px solid black;
+  font-family: calibri;
+  font-size:14px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+  font-family: calibri;
+  font-size:14px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+	</style>
+  </head>
+
+  <body>
+	<h1>PAC2000-Automation-Through-Machine-Learning</h1>
+	</br></br>
+	
+	<form>  
+		Enter Problem Summary<input type="text" id="textBox" name="textBox"/><br/>
+		<a href="" id="theButton">Predict Resolution</a><br/>
+		<input type="button" value="Submit" id="button" onclick="getText()"/>  
+	</form> 
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">  
+	
+	var resolution=document.getElementById("textBox").value;  
+	
+	window.onload = function() {
+	document.getElementById("theButton").onclick = function() {
+		getResolution()
+	};
+	}
+
+	function getResolution() {
+	// ajax the JSON to the server
+	$.post("receiver", resolution, function(){
+
+	});
+	// stop link reloading the page
+	event.preventDefault();
+	}
+		function getText(){  
+		var res=document.getElementById("textBox").value;  
+		document.write(res);  
+		}
+	$(function() {
+    $('button').click(function() {
+        $.ajax({
+            url: '/signUpUser',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+});
+	</script>
+	</br>
+	</br>
+	<table>
+	<tr>
+		<th>Resolutions</th>
+	</tr>
+	<tr>
+		<td>
+		Ticket closed - Integrated the chargeoff and payment data records</br>
+		Ticket closed - Validated the data records and it is no longer an issue after redesigning the project</br>
+		Ticket Moved to Research as this is occuring once in a long time. Synced the data records for now.</br>
+		Ticket closed - according to the Business Standard Procedure, synced the data of accounts</br>
+		Ticket closed - Fixed data according to payment suspense</br>
+		Ticket will be tracked to observe changes in account details</br>
+		Ticket closed - Software Installed as per request </br>
+		No good fix found yet. Corrected the sequence numbers in the questionnaire for now</br>
+		Ticket Closed - Access provided accordingly</br>
+		Ticket closed - cleared the cache and started the server.</br>
+		Ticket Closed - Cleared cache and tomcat working directory and started the server</br>
+		Ticket Closed - Changed the arguments in server launch configutations</br>
+		Ticket Closed - Code Modified to avoid the processing of request during weekends and holidays</br>
+		Ticket Closed - Code Modified to change format to previleged account</br>
+		Ticket Closed - Code Modified to correct the letter spacing in document screen</br>
+		Ticket Closed - Code Modified accordingly</br>
+		Ticket closed - Fixed data according to payment suspense</br>
+		Ticket Closed - Code Modified to stop displaying the auto comments from he application history</br>
+		Ticket Closed - Code Modified to return the error code of the maintainance request</br>
+		Ticket Closed - Code Modified to retain request ids even if request fails.</br>
+		Ticket Closed - Deleted .snap file from <workspace-directory>\.metadata\.plugins\org.eclipse.core.resources</br>
+		Ticket closed - Integrated the chargeoff and payment data records</br>
+		Ticket Closed - Letter Added</br>
+		Ticket Closed - Job Restarted</br>
+		Ticket Closed - Host profile compliance verified</br>
+		Ticket closed - Integrated the chargeoff and payment data records</br>
+		Ticket Closed - Go to /bin subfolder of the Tomcat installation folder and execute the shutdown.bat (Windows) or shutdown.sh (Unix) script</br>
+		Ticket Closed - Network changed to make the server available temporarily</br>
+		Ticket Closed - Network change according to the new IP created</br>
+		Ticket Closed - Password reset</br>
+		Ticket Closed - moved jmx-remote key value pairs from JAVA_OPTS to CATALINA_OPTS in setenv.sh</br>
+		Ticket Closed - Ran script to sync the data</br>
+		Ticket Closed - Removed the false exception</br>
+		Ticket Closed - Security Changed for compliance</br>
+		Ticket Closed - Reconfigured the settings</br>
+		Ticket Closed - Ran script to sync the data</br>
+		Ticket Closed - Removed the server and added it back</br>
+		Ticket Closed - Removed duplicate <context> tags from server.xml</br>
+		Ticket closed - Validated the data records and it is no longer an issue after redesigning the project</br>
+		Ticket closed - Software Installed as per request </br>
+		Ticket Closed -account unlocked</br>
+		Ticket Closed - Synced the data to have the same timestamp</br>
+		Ticket Closed - Server rebooted and there is no longer an issue</br>
+		</td>
+	</tr>
+	</table>
+
+  </body>
+</html>
